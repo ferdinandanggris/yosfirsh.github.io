@@ -10,19 +10,19 @@ var firebaseConfig = {
     measurementId: "G-K2X0S3X1NW"
 };
 
-firebase.initializeApp(firebaseConfig);
-
 // Inisialisasi App Firebase
 firebase.initializeApp(firebaseConfig);
 
 // Referensi database Firebase
-var dbRef = firebase.database().ref();
+var dbRef = firebase.database().ref("/");
 
 // Mendengarkan perubahan pada database Firebase
 dbRef.on("value", function(snapshot) {
     // Mendapatkan data parkir dari database Firebase
     var parkirData = snapshot.val();
-  
+
+    console.log(parkirData); // tampilkan nilai dari parkirData di console
+
     // Mengupdate warna kotak-kotak sesuai data parkir
     if (parkirData.parkir_1 === 1) {
       document.getElementById("parkir_1").style.backgroundColor = "green";
