@@ -29,6 +29,14 @@ body {
   font-weight: bold;
 }
 
+.card-rekomendasi{
+  background-color: rgb(255, 147, 24);
+  aspect-ratio: 1 / 1;
+  height: 80px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
 #card-gerbang{
   background-color: #2c9823;
   margin: auto;

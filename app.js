@@ -61,4 +61,30 @@ dbRef.on("value", function(snapshot) {
     document.getElementById("card-gerbang").style.backgroundColor = "red";
     document.getElementById("gerbang").innerText = "Penuh";
   }
+
+  let shouldSkip = false;
+  let valueRekomendasi = "-";
+  Object.keys(parkirData).forEach(key=>{
+    if (parkirData[key] === 0) {
+
+      if (!shouldSkip) {
+      let split = ('' +key).split("_");
+      if (split.length < 2) {
+      }else{
+
+        let value = split.length > 1 ? split[1] : '-';
+        valueRekomendasi = `0${value}`
+        shouldSkip = true;
+ 
+      }
+      
+    }
+  }else{
+    document.getElementById("rekomendasi").innerText = '-'
+  }
+
+  document.getElementById("rekomendasi").innerText = `${valueRekomendasi}`;
+
+    })
+
 });
